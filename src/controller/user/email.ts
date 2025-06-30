@@ -1,7 +1,6 @@
 import nodemailer from 'nodemailer';
 import PDFDocument from 'pdfkit';
 import dotenv from 'dotenv';
-import { attachment, contentType } from 'express/lib/response';
 dotenv.config();
 
 export function createPdfBuffer(name: string, email: string, rollNo: string, department: string, boardingPoint: string, gender: string, feesdetails: string, feesamount: string):Promise<Buffer>{
