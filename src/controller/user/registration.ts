@@ -27,9 +27,6 @@ export const registerUser = async (req: Request, res: Response):Promise<any> => 
     if (!feesdetails) {
       return res.status(400).json({ message: "Fees details are required" });
     }
-    if (!feesamount) {
-      return res.status(400).json({ message: "Fees amount is required" });
-    }
 
     const existingUser = await Registration.findOne({ name, rollNo, email });
     if (existingUser) {
