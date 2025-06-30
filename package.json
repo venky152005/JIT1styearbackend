@@ -1,0 +1,30 @@
+{
+  "name": "1st-year-registration",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node src/index.ts",
+    "dev": "tsx watch src/index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.0.0",
+    "express": "^5.1.0",
+    "mongoose": "^8.16.1",
+    "nodemailer": "^7.0.3",
+    "pdfkit": "^0.17.1"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^24.0.7",
+    "tsx": "^4.20.3"
+  },
+  "private": true,
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
