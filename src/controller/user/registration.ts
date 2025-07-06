@@ -33,7 +33,7 @@ export const registerUserAdmit = async (req: Request, res: Response):Promise<any
 
     const existingUser = await Registration.findOne({ name, rollNo, email });
     if (existingUser) {
-      return res.status(400).json({ message: "User already registered" });
+      return res.status(402).json({ message: "User already registered" });
     }
 
     const newUser = await Registration.create({
@@ -63,7 +63,7 @@ export const registerUserAdmit = async (req: Request, res: Response):Promise<any
 
  export const registerUser = async (req: Request, res: Response):Promise<any> => {
   try {
-    const { name, rollNo, email, gender, department, boardingpoint, feesdetails } = req.body;
+    const { name, rollNo, email, gender, department, boardingpoint,category, feesdetails } = req.body;
     if (!name){
         return res.status(400).json({ message: "Name is required" });
     }
@@ -98,6 +98,7 @@ export const registerUserAdmit = async (req: Request, res: Response):Promise<any
       gender,
       department,
       boardingpoint,
+      category,
       feesdetails,
     });
 

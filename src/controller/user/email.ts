@@ -52,7 +52,7 @@ export function createPdfBuffer(name: string, email: string, rollNo: string, dep
       doc.text(`Dear ${name},`);
       doc.moveDown();
       doc.text(
-        "Congratulations to select JIT to confirm that your registration for the first year program has been successfully processed.\nBelow are the details of your registration:"
+        "Congratulations and welcome to Jeppiaar Institute of Technology (JIT)! \n We are pleased to confirm that your registration for the First Year program has been successfully processed."
       );
 
       doc.moveDown(2);
@@ -92,7 +92,7 @@ const footerX = 50;
 doc.font("Helvetica").fontSize(12);
 
 doc.text(
-  "Please keep this acknowledgement for your records. You will need to present this information during orientation.",
+  "Please keep this acknowledgement for your records, as you will need to present this information during the orientation session.",
   footerX,
   doc.y,
   {
@@ -103,7 +103,7 @@ doc.text(
 
 doc.moveDown();
 doc.text(
-  "For any queries, please contact the administration office at admin@college.edu or call at +91-9876543210.",
+  "For any queries, please contact the Administration Office at admin@college.edu or call us at ‪+91-9876543210‬.",
   footerX,
   doc.y,
   {
