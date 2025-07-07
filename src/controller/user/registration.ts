@@ -63,7 +63,7 @@ export const registerUserAdmit = async (req: Request, res: Response):Promise<any
 
  export const registerUser = async (req: Request, res: Response):Promise<any> => {
   try {
-    const { name, rollNo, email, gender, department, boardingpoint,category, feesdetails } = req.body;
+    const { name, rollNo, email, gender, department, boardingpoint,category, feesdetails, feesamount } = req.body;
     if (!name){
         return res.status(400).json({ message: "Name is required" });
     }
@@ -85,7 +85,9 @@ export const registerUserAdmit = async (req: Request, res: Response):Promise<any
     if (!feesdetails) {
       return res.status(400).json({ message: "Fees details are required" });
     }
-
+    if (!feesamount){
+      return res.status(400).json({ message: "Fees amount are required" });
+    }
     const existingUser = await Registration.findOne({ name, rollNo, email });
     if (existingUser) {
       return res.status(400).json({ message: "User already registered" });
@@ -100,6 +102,7 @@ export const registerUserAdmit = async (req: Request, res: Response):Promise<any
       boardingpoint,
       category,
       feesdetails,
+      feesamount
     });
 
     console.log("User registered successfully");
